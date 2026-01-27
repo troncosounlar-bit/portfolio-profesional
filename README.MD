@@ -239,7 +239,7 @@ const { t, language, toggleLanguage } = useLanguage();
 
 ### Tablas Principales
 
-#### 1. **hero_data**
+#### 1. **hero**
 ```sql
 - id: uuid
 - name: text
@@ -250,7 +250,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - created_at: timestamp
 ```
 
-#### 2. **experiences**
+#### 2. **experiences_tabs**
 ```sql
 - id: uuid
 - type: text (work/education)
@@ -264,7 +264,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 3. **projects**
+#### 3. **projects_data**
 ```sql
 - id: uuid
 - title: text (multi-idioma JSON)
@@ -278,7 +278,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 4. **stats**
+#### 4. **stats_data**
 ```sql
 - id: uuid
 - icon: text
@@ -287,14 +287,14 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 5. **skill_categories**
+#### 5. **skill_categories_data**
 ```sql
 - id: uuid
 - name: text (multi-idioma JSON)
 - order_position: integer
 ```
 
-#### 6. **skills**
+#### 6. **skills_data**
 ```sql
 - id: uuid
 - category_id: uuid (FK)
@@ -303,7 +303,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 7. **technologies**
+#### 7. **technologies_data**
 ```sql
 - id: uuid
 - name: text
@@ -312,7 +312,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 8. **about_data**
+#### 8. **about**
 ```sql
 - id: uuid
 - description: text (multi-idioma JSON)
@@ -322,7 +322,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - technologies_used: integer
 ```
 
-#### 9. **work_philosophy**
+#### 9. **philosophy_data**
 ```sql
 - id: uuid
 - icon: text
@@ -331,7 +331,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - order_position: integer
 ```
 
-#### 10. **contact_submissions**
+#### 10. **submissions_contact**
 ```sql
 - id: uuid
 - name: text
@@ -341,7 +341,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - read: boolean
 ```
 
-#### 11. **style_settings**
+#### 11. **style**
 ```sql
 - id: uuid
 - theme: text
@@ -349,7 +349,7 @@ const { t, language, toggleLanguage } = useLanguage();
 - custom_css: text
 ```
 
-#### 12. **page_views**
+#### 12. **views**
 ```sql
 - id: uuid
 - page: text
@@ -526,16 +526,182 @@ Este es un proyecto personal, pero las sugerencias son bienvenidas:
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+# ⚠️ SOFTWARE PROPIETARIO – TODOS LOS DERECHOS RESERVADOS
+
+## 📌 Aviso Legal
+
+Este proyecto **NO es de código abierto (open source)**.
+
+Todo el contenido de este repositorio — incluyendo, entre otros, el código fuente, código compilado, arquitectura, lógica, UI/UX, activos de diseño, plantillas, configuraciones, documentación, elementos audiovisuales y cualquier concepto derivado (colectivamente, el **“Software”**) — es **propiedad intelectual exclusiva de Pablo Troncoso**.
+
+---
+
+## 🔐 Licencia
+
+### LICENCIA COMERCIAL PROPIETARIA
+
+Copyright © 2025 Pablo Troncoso  
+**Todos los derechos reservados.**
+
+No se concede ninguna licencia ni derecho por defecto.
+
+Usted **NO está autorizado** a usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, vender, desplegar, alojar o explotar de cualquier otra forma este Software, total o parcialmente, **sin autorización previa, expresa y por escrito** del titular de los derechos.
+
+Cualquier uso no autorizado constituye una violación de la **legislación argentina aplicable y de las leyes internacionales de propiedad intelectual**, y podrá dar lugar a responsabilidades civiles y/o penales.
+
+---
+
+## ✅ Uso Autorizado
+
+En caso de que el titular de los derechos otorgue autorización expresa y por escrito, dicha autorización será:
+
+- Limitada  
+- No exclusiva  
+- Intransferible  
+- Revocable en cualquier momento  
+- Restringida estrictamente al caso de uso aprobado  
+
+La autorización **no implica** cesión, transferencia ni renuncia a ningún derecho de propiedad intelectual.
+
+Todos los derechos no otorgados expresamente quedan **plenamente reservados**.
+
+---
+
+## ❌ Prohibiciones Estrictas
+
+Salvo autorización expresa y por escrito, **NO está permitido**:
+
+- Utilizar este Software con fines comerciales o profesionales  
+- Desplegarlo como parte de un servicio SaaS, PaaS o plataforma alojada  
+- Redistribuirlo, revenderlo, sublicenciarlo o compartirlo  
+- Publicarlo en repositorios públicos o privados  
+- Usarlo como plantilla, boilerplate, starter kit o recurso educativo  
+- Realizar ingeniería inversa, descompilación, desensamblado o crear obras derivadas  
+- Eliminar o modificar avisos de copyright o autoría  
+- Atribuirse la autoría o reclamar propiedad sobre este Software  
+
+---
+
+## 🖼️ Limitación de Portfolio / Exhibición
+
+Este repositorio puede ser visualizado **únicamente con fines de evaluación o demostración**.
+
+La visualización del código está permitida.  
+**El uso del código NO está permitido.**
+
+Este Software no podrá ser utilizado, total ni parcialmente, como:
+
+- Proyecto de portfolio  
+- Entregable para clientes  
+- Plantilla comercial  
+- Producto de marca blanca (white-label)  
+- Base para reventa o redistribución  
+
+salvo autorización expresa y por escrito del titular de los derechos.
+
+---
+
+## ⚠️ Exclusión de Garantías
+
+EL SOFTWARE SE PROPORCIONA **“TAL CUAL”**, SIN GARANTÍAS DE NINGÚN TIPO, YA SEAN EXPRESAS O IMPLÍCITAS, INCLUYENDO, ENTRE OTRAS, GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR, NO INFRACCIÓN, SEGURIDAD O FUNCIONAMIENTO LIBRE DE ERRORES.
+
+---
+
+## 🚫 Limitación de Responsabilidad
+
+EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE, INCLUYENDO, ENTRE OTRAS, LAS LEYES DE LA REPÚBLICA ARGENTINA Y LOS TRATADOS INTERNACIONALES, EL TITULAR DE LOS DERECHOS NO SERÁ RESPONSABLE POR DAÑOS DIRECTOS, INDIRECTOS, INCIDENTALES, CONSECUENTES, ESPECIALES O PUNITIVOS QUE SURJAN DEL USO O MAL USO DE ESTE SOFTWARE.
+
+TODO EL RIESGO ES ASUMIDO EXCLUSIVAMENTE POR EL USUARIO.
+
+---
+
+## ⛔ Terminación
+
+Cualquier violación de estos términos dará lugar a la **terminación inmediata y automática** de cualquier autorización concedida, sin necesidad de notificación previa.
+
+---
+
+## ⚖️ Legislación Aplicable y Ejecución Internacional
+
+Esta licencia se regirá e interpretará de conformidad con las leyes de la **República Argentina**, incluyendo, entre otras, la **Ley 11.723 de Propiedad Intelectual**.
+
+Nada de lo dispuesto en esta licencia impedirá al titular de los derechos ejercer sus derechos conforme a **tratados internacionales**, incluyendo, entre otros:
+
+- Convenio de Berna para la Protección de las Obras Literarias y Artísticas  
+- Acuerdo sobre los ADPIC / TRIPS (OMC)  
+- Tratado de la OMPI sobre Derecho de Autor  
+
+El titular de los derechos se reserva el derecho de iniciar acciones legales en **cualquier jurisdicción nacional o internacional competente**.
+
+---
+
+## 📩 Solicitudes de Licencia y Autorización
+
+Todas las solicitudes de licencia, uso o explotación comercial **deben realizarse por escrito** a:
+
+📧 **pablotroncoso.jobs@gmail.com**
+
+Ninguna autorización será válida salvo confirmación expresa y escrita del titular de los derechos.
+
+---
+
+## 💣 Cláusula Penal
+
+Cualquier uso, reproducción, modificación, distribución, comercialización, despliegue o explotación no autorizada de este Software, total o parcialmente, constituirá un **incumplimiento grave** de esta licencia.
+
+Sin perjuicio de los daños adicionales que pudieran corresponder, la parte infractora acepta pagar una **penalidad contractual** equivalente a:
+
+- La tarifa de licencia comercial más alta aplicable a este Software, **o**
+- El beneficio económico total obtenido mediante el uso no autorizado, **lo que resulte mayor**
+
+Dicha penalidad será aplicable de forma **automática**, sin necesidad de notificación previa ni declaración judicial, y no limita el derecho del titular de los derechos a reclamar daños y perjuicios adicionales.
+
+---
+
+## 🛡️ Indemnización
+
+El usuario no autorizado se compromete a **indemnizar, defender y mantener indemne** a Pablo Troncoso frente a cualquier reclamo, daño, pérdida, responsabilidad, costo, gasto u honorario legal (incluyendo honorarios de abogados) que surja de o esté relacionado con:
+
+- El uso no autorizado del Software  
+- El incumplimiento de esta licencia  
+- La violación de leyes aplicables o derechos de terceros  
+- La explotación comercial o profesional sin autorización  
+
+Esta obligación **subsistirá** aun después de la terminación de esta licencia.
+
+---
+
+## 🏛️ Jurisdicción y Competencia (Argentina)
+
+Esta licencia, incluyendo el presente anexo, se regirá **exclusivamente** por las leyes de la **República Argentina**, incluyendo la **Ley 11.723** y sus normas complementarias.
+
+Las partes acuerdan expresamente que **cualquier controversia, reclamo o acción legal** derivada de o relacionada con este Software será sometida a la **jurisdicción exclusiva de los tribunales ordinarios de la Ciudad Autónoma de Buenos Aires (CABA)**, renunciando expresamente a cualquier otro fuero o jurisdicción que pudiera corresponder.
+
+---
+
+## 🌍 Reserva de Ejecución Internacional
+
+Nada de lo dispuesto en esta licencia se interpretará como una limitación al derecho del titular de los derechos a ejercer y hacer valer sus derechos de propiedad intelectual conforme a:
+
+- Tratados internacionales  
+- Legislaciones extranjeras en materia de derechos de autor  
+- Acciones civiles o penales transfronterizas  
+
+La elección de jurisdicción argentina **no constituye una renuncia** a los derechos de ejecución internacional.
+
+---
+
+## ⛔ Subsistencia de Derechos
+
+Todos los derechos de propiedad intelectual, restricciones, exclusiones de responsabilidad, limitaciones de responsabilidad, obligaciones de indemnización y disposiciones de ejecución **subsistirán** aun después de la terminación de cualquier autorización concedida en virtud de esta licencia.
 
 ---
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- Website: [tuportfolio.com](https://tuportfolio.com)
-- LinkedIn: [tu-linkedin](https://linkedin.com/in/tu-perfil)
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+**Antonio Pablo Troncoso**
+- LinkedIn: https://www.linkedin.com/in/antonio-pablo-troncoso/
+- GitHub: https://github.com/troncosounlar-bit
 
 ---
 
@@ -548,15 +714,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 - [Motion (Framer Motion)](https://motion.dev/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Lucide Icons](https://lucide.dev/)
-
----
-
-## 📞 Soporte
-
-Si tienes alguna pregunta o necesitas ayuda:
-- 📧 Email: tu-email@ejemplo.com
-- 💬 Discussions: [GitHub Discussions](https://github.com/tu-usuario/tu-repo/discussions)
-- 🐛 Issues: [GitHub Issues](https://github.com/tu-usuario/tu-repo/issues)
 
 ---
 

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Asegúrate de que la ruta sea relativa correcta al archivo CSS */
+@source "../**/*.{js,ts,jsx,tsx,mdx}";

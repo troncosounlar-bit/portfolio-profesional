@@ -152,13 +152,14 @@ export const Projects = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 whileHover={{ scale: 1.04 }}
-                className="relative group rounded-xl p-[2px] border-2 border-white/20 transition-all duration-150"
+                // AGREGADO: h-full para ocupar todo el alto del grid
+                className="relative group rounded-xl p-[2px] border-2 border-white/20 transition-all duration-150 h-full"
               >
                 <div className="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-all shadow-[0_0_18px_var(--accent-dynamic)]" />
 
-                <div className="relative z-10 bg-black/60 rounded-xl backdrop-blur-sm overflow-hidden min-h-[540px] flex flex-col">
+                {/* AGREGADO: h-full aquí también */}
+                <div className="relative z-10 bg-black/60 rounded-xl backdrop-blur-sm overflow-hidden min-h-[540px] flex flex-col h-full">
                   
-                  {/* Fecha Centrada y Mejorada */}
                   <div className="px-6 py-4 flex justify-center border-b border-white/5 bg-white/[0.02]">
                     <span 
                       className="text-[12.5px] font-bold uppercase tracking-[0.15em] transition-all duration-300 group-hover:scale-105"
@@ -171,7 +172,7 @@ export const Projects = () => {
                     </span>
                   </div>
 
-                  <div className="relative h-48 w-full overflow-hidden">
+                  <div className="relative h-48 w-full overflow-hidden shrink-0">
                     <ImageWithFallback
                       src={project.image_url}
                       alt={project.title}

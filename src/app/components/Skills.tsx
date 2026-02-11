@@ -26,11 +26,7 @@ export const Skills = () => {
 
   if (isLoading) {
     return (
-      <section
-        id="skills"
-        ref={sectionRef}
-        className="py-12 px-4 sm:px-6 lg:px-8 relative"
-      >
+      <section id="skills" ref={sectionRef} className="py-12 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto text-center">
           <div className="text-gray-400">{t('projects.loading')}</div>
         </div>
@@ -39,11 +35,7 @@ export const Skills = () => {
   }
 
   return (
-    <section
-      id="skills"
-      ref={sectionRef}
-      className="py-12 px-4 sm:px-6 lg:px-8 relative"
-    >
+    <section id="skills" ref={sectionRef} className="py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER */}
@@ -57,49 +49,33 @@ export const Skills = () => {
             {t('skills.subtitle')}
           </span>
 
-          <h3
-            className="text-white mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}
-          >
+          <h3 className="text-white mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {t('skills.title')}{' '}
-            <span
-              style={{
-                color: 'var(--accent-dynamic)',
-                textShadow: `0 0 30px var(--accent-dynamic-glow)`,
-              }}
-            >
+            <span style={{ color: 'var(--accent-dynamic)', textShadow: `0 0 30px var(--accent-dynamic-glow)` }}>
               {t('skills.title.highlight')}
             </span>
           </h3>
 
-          <div
-            className="w-20 h-1 mx-auto rounded-full"
-            style={{ backgroundColor: 'var(--accent-dynamic)' }}
-          />
+          <div className="w-20 h-1 mx-auto rounded-full" style={{ backgroundColor: 'var(--accent-dynamic)' }} />
         </motion.div>
 
         {/* SKILL CARDS */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20 items-stretch">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: 0.3 + categoryIndex * 0.15,
-              }}
-              whileHover={{
-                scale: 1.04,
-              }}
-              className="relative group rounded-xl p-[2px] border-2 border-white/20 transition-all duration-150"
+              transition={{ duration: 0.5, delay: 0.3 + categoryIndex * 0.15 }}
+              whileHover={{ scale: 1.04 }}
+              className="relative group rounded-xl p-[2px] border-2 border-white/20 transition-all duration-150 flex flex-col"
             >
-              <div className="absolute inset-0 rounded-xl pointer-events-none 
-                  opacity-0 group-hover:opacity-100 transition-all duration-150 
-                  shadow-[0_0_15px_var(--accent-dynamic)]" />
+              {/* CORRECCIÓN: Quitamos el shadow de aquí para que no se vea doble */}
+              <div className="absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-150" />
 
+              {/* CONTENEDOR INTERNO: Mantenemos tu sombra aquí, que es la que manda */}
               <div className="relative z-10 bg-black/60 rounded-xl p-6 pt-10 backdrop-blur-sm 
-                  transition-all duration-150 group-hover:shadow-[0_0_20px_var(--accent-dynamic)]">
+                  transition-all duration-150 group-hover:shadow-[0_0_20px_var(--accent-dynamic)] h-full flex flex-col">
 
                 <div className="
                   absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2
@@ -112,8 +88,7 @@ export const Skills = () => {
                   {category.name}
                 </div>
 
-                <div className="space-y-6 mt-4">
-                  {/* SOLUCIÓN: Tipado explícito para 'skill' (any o Skill) y 'skillIndex' (number) */}
+                <div className="space-y-6 mt-4 flex-grow">
                   {category.skills.map((skill: any, skillIndex: number) => (
                     <div key={skill.id}>
                       <div className="flex justify-between mb-2">
@@ -150,24 +125,13 @@ export const Skills = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <h4
-            className="text-center font-semibold mb-6 tracking-wide"
-            style={{
-              fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
-              color: 'white',
-              textShadow: '0 0 12px rgba(255,255,255,0.2)',
-            }}
-          >
+          <h4 className="text-center font-semibold mb-6 tracking-wide"
+            style={{ fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', color: 'white', textShadow: '0 0 12px rgba(255,255,255,0.2)' }}>
             {t('skills.technologies.title')}
           </h4>
 
-          <div
-            className="w-16 h-[3px] mx-auto mb-12 rounded-full"
-            style={{
-              backgroundColor: 'var(--accent-dynamic)',
-              boxShadow: '0 0 12px var(--accent-dynamic-glow)',
-            }}
-          />
+          <div className="w-16 h-[3px] mx-auto mb-12 rounded-full"
+            style={{ backgroundColor: 'var(--accent-dynamic)', boxShadow: '0 0 12px var(--accent-dynamic-glow)' }} />
 
           <TechBanner />
         </motion.div>

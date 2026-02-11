@@ -12,11 +12,8 @@ export const TechBanner = () => {
     );
   }
 
-  // Duplicate technologies array for seamless infinite scroll
+  // Duplicamos el array para que el scroll sea infinito y fluido
   const duplicatedTechs = [...technologies, ...technologies];
-  
-  // Calculate animation distance based on number of items
-  const totalWidth = technologies.length * 132; // 120px width + 12px gap
 
   return (
     <div className="relative overflow-hidden py-8">
@@ -26,9 +23,9 @@ export const TechBanner = () => {
       
       {/* Scrolling container */}
       <motion.div
-        className="flex gap-12 items-center"
+        className="flex gap-12 items-center w-max" // w-max asegura que el contenedor no se corte
         animate={{
-          x: [0, -totalWidth],
+          x: [0, "-50%"], // Se desplaza exactamente la mitad (la primera lista completa)
         }}
         transition={{
           x: {
@@ -55,7 +52,6 @@ export const TechBanner = () => {
                   loading="lazy"
                   className="w-10 h-10 object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
                   onError={(e) => {
-                    // Silently handle error and show fallback
                     const target = e.currentTarget;
                     target.style.display = 'none';
                     const parent = target.parentElement;
